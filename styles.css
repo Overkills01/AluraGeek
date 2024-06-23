@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Press Start 2P", system-ui;
+    background-color: #c0bcb7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 34rem;
+    background-image: url(assets/Imagen/gamemarioretrof.gif);
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    border: 8px solid #c0bcb7;
+    border-radius: 72px 70px 112px 70px;
+    position: relative;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.6), inset -4px -4px 10px rgba(255, 255, 255, 0.6);
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top: 35px solid #515460;
+    border-bottom: 36px solid #515460;
+    border-left: 140px solid #515460;
+    border-right: 140px solid #515460;
+    pointer-events: none;
+    box-sizing: border-box;
+    border-radius: 20px 20px 62px 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6), -4px -4px 10px rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 493px) {
+    .geek {
+        font-size: 19px;
+    }
+}
+
+/* Estilo del círculo verde */
+.header-circle {
+    width: 13px;
+    height: 13px;
+    background-color: #39FF14;
+    border-radius: 50%;
+    position: absolute;
+    left: 60px;
+    top: 145px;
+    animation: blink 1s infinite alternate;
+    box-shadow: 0 0 20px #39FF14, 0 0 30px #39FF14, 0 0 40px #39FF14, 0 0 50px #39FF14, 0 0 60px #39FF14, 0 0 70px #39FF14;
+}
+
+/* Animación de parpadeo */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 20px #39FF14, 0 0 30px #39FF14, 0 0 40px #39FF14, 0 0 50px #39FF14, 0 0 60px #39FF14, 0 0 70px #39FF14;
+    }
+    50% {
+        opacity: 0.5;
+        box-shadow: 0 0 10px #39FF14, 0 0 15px #39FF14, 0 0 20px #39FF14, 0 0 25px #39FF14, 0 0 30px #39FF14, 0 0 35px #39FF14;
+    }
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse; /* Para que agregarProducto esté a la derecha */
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.agregarProducto {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    height: fit-content;
+}
+
+.agregarProducto h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.agregarProducto form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.agregarProducto input[type="text"],
+.agregarProducto input[type="number"],
+.agregarProducto input[type="submit"],
+.agregarProducto .limpiar-input {
+    padding: 1.25rem 1.75rem;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 35px;
+    font-family: "Press Start 2P", system-ui;
+}
+
+.agregarProducto input[type="submit"],
+.agregarProducto .limpiar-input {
+    border: none;
+    cursor: pointer;
+}
+
+.agregarProducto input[type="submit"],
+.agregarProducto .limpiar-input {
+    background-color: #28a745;
+    color: #fff;
+    width: 100%;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.agregarProducto .limpiar-input {
+    background-color: #dc3545;
+}
+
+.agregarProducto input[type="submit"]:active {
+    background-color: #1e7932;
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+.agregarProducto .limpiar-input:active {
+    background-color: #8f232e;
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: "Press Start 2P", system-ui;
+}
+
+.productos {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 70%;
+}
+
+.productos-titulo {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contenedor-productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    width: 16rem;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 20rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.console {
+    width: 25rem;
+    padding: 20px;
+}
+
+@media (max-width: 320px) {
+
+    .geek {
+        font-size: 15px;
+    }
+
+    .productos-titulo {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    .card img {
+        max-width: 10.4rem !important;
+        height: 10rem;
+       
+    }
+    
+
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 23rem;
+    }
+    header::before {
+        border-top: 35px solid #515460;
+        border-bottom: 36px solid #515460;
+        border-left: 70px solid #515460;
+        border-right: 70px solid #515460;
+    }
+
+    .header-circle {
+        left: 30px;
+        top: 114px;
+    }
+    main {
+        flex-direction: column;
+    }
+
+    .agregarProducto, .productos {
+        width: 100%;
+    }
+
+    .botones {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .console {
+        width: 14rem;
+        padding: 20px;
+    }
+
+    .contenedor-productos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1291px) {
+    main {
+        flex-direction: column;
+    }
+
+    .agregarProducto, .productos {
+        width: 100%;
+    }
+
+    .botones {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+.contenedor-productos ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    width: 16rem;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 20rem;
+}
+
+.card img {
+    max-width: 14.4rem;
+    height: 10rem;
+    border-radius: 5px;
+}
+
+.card h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.card p {
+    margin-bottom: 10px;
+}
+
+/* Estilo para el botón de eliminar */
+.delete-button {
+    background-color: #dc3545; 
+    color: #fff; 
+    border: none; 
+    border-radius: 50%; 
+    padding: 20px; 
+    cursor: pointer; 
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); 
+    left: 80px;
+    position: relative;
+}
+
+.delete-button img {
+    width: 20px; 
+    height: 20px;
+}
+
+.delete-button:hover {
+    background-color: #c82333; 
+}
+
+.delete-button:active {
+    background-color: #8f232e; 
+    transform: scale(0.95); 
+    box-shadow: none; 
+}

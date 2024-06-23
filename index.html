@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alura Geek</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-circle"></div>
+        <h2 class="geek">
+            Alura Geek
+        </h2>
+    </header>
+
+    <main>
+        <section class="agregarProducto">
+            <h3>
+                + Producto:
+            </h3>
+
+            <form  class="form-container" data-form>
+                <input type="text" placeholder="nombre..." minlength="3" maxlength="30" required data-name>
+                <input type="number" placeholder="precio..." min="1" maxlength="7" required data-price>
+                <input type="text" placeholder="imagen..." required data-image>
+                
+                <!--Botones-->
+                
+                <div class="botones">
+                    <input type="submit" value="Agregar">
+                    <button type="button" class="limpiar-input">Borrar</button>
+                </div>
+            </form>
+        </section>
+        <section class="productos">
+            <h3 class="productos-titulo">
+                Mis productos:
+            </h3>
+            <div data-product class="contenedor-productos">
+                
+
+                        <!--la lista de productos se va a crear dinámicamente dentro de este div-->
+
+                               
+                
+                                    
+            </div>
+
+                              
+        </section>       
+
+    </main>
+
+    <footer>
+        <div>
+            <img class="console" src="assets/Imagen/console-5983999_1920.jpg" alt="">
+            <h2>
+                Alura Geek
+            </h2>
+        </div>
+        <h3>
+            Creado por Sebastian Sosa
+        </h3>
+        <h3>
+            Alura - ONE 2024
+        </h3>
+    </footer>
+
+    <script type="module" src="js/controllers/main.js"></script>
+</body>
+
+</html>
