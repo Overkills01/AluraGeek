@@ -6,7 +6,7 @@
 
 const productList = () =>{
 
-    return fetch("https://seba-3.vercel.app/products") /* el fecth trabaja con programación asícrona*/
+    return fetch("https://api-alura-geek-tau.vercel.app/products") /* el fecth trabaja con programación asícrona*/
             .then((res) => res.json()) /** res = respuesta */
             .catch( (err) => console.log(err));
 }
@@ -15,7 +15,7 @@ const productList = () =>{
 
 const createProducts = (name, price, image) =>{
 
-    return fetch("https://seba-3.vercel.app/products", {
+    return fetch("https://api-alura-geek-tau.vercel.app/products", {
 
         method: "POST",
         headers: {
@@ -41,7 +41,7 @@ const createProducts = (name, price, image) =>{
 /**función para eliminar producto */
 
 const deleteProducts = (id) => {
-    return fetch(`https://seba-3.vercel.app/products/${id}`, {
+    return fetch(`https://api-alura-geek-tau.vercel.app/products/${id}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
