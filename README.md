@@ -33,4 +33,4 @@
 
 <h3> Desde este link podrás acceder a la app</h3>
 
-	[GitHub Pages](https://overkills01.github.io/AluraGeek/).
+	https://overkills01.github.io/AluraGeek/
