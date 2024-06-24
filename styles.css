@@ -182,13 +182,76 @@ main {
 }
 
 .card {
-    border: 1px solid #ccc;
+    border: 2px solid transparent;
     border-radius: 10px;
     padding: 10px;
     width: 16rem;
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height: 20rem;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: #39FF14;
+}
+
+.card img {
+    max-width: 14.4rem;
+    height: 10rem;
+    border-radius: 5px;
+}
+
+.card h4 {
+    margin-top: 66px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.card p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Estilo para el botón de eliminar */
+.delete-button {
+    background-color: #dc3545; 
+    color: #fff; 
+    border: none; 
+    border-radius: 50%; 
+    padding: 10px; 
+    cursor: pointer; 
+    transition: opacity 0.3s ease, background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); 
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0; /* Initially hidden */
+}
+
+.card:hover .delete-button {
+    opacity: 1; /* Visible on hover */
+}
+
+.delete-button img {
+    width: 20px; 
+    height: 20px;
+}
+
+.delete-button:hover {
+    background-color: #c82333; 
+}
+
+.delete-button:active {
+    background-color: #8f232e; 
+    transform: scale(0.95); 
+    box-shadow: none; 
 }
 
 footer {
@@ -207,7 +270,6 @@ footer {
 }
 
 @media (max-width: 320px) {
-
     .geek {
         font-size: 15px;
     }
@@ -220,10 +282,7 @@ footer {
     .card img {
         max-width: 10.4rem !important;
         height: 10rem;
-       
     }
-    
-
 }
 
 @media (max-width: 768px) {
@@ -290,58 +349,4 @@ footer {
     margin: 0;
     list-style-type: none;
     gap: 20px;
-}
-
-.card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    width: 16rem;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 20rem;
-}
-
-.card img {
-    max-width: 14.4rem;
-    height: 10rem;
-    border-radius: 5px;
-}
-
-.card h4 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-.card p {
-    margin-bottom: 10px;
-}
-
-/* Estilo para el botón de eliminar */
-.delete-button {
-    background-color: #dc3545; 
-    color: #fff; 
-    border: none; 
-    border-radius: 50%; 
-    padding: 20px; 
-    cursor: pointer; 
-    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease; 
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); 
-    left: 80px;
-    position: relative;
-}
-
-.delete-button img {
-    width: 20px; 
-    height: 20px;
-}
-
-.delete-button:hover {
-    background-color: #c82333; 
-}
-
-.delete-button:active {
-    background-color: #8f232e; 
-    transform: scale(0.95); 
-    box-shadow: none; 
 }
