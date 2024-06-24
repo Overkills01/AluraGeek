@@ -1,4 +1,4 @@
- <h1>Challenge-AluraGeek</h1>
+<h1>Challenge-AluraGeek</h1>
 
 ### Pasos
 
